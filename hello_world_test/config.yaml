@@ -1,0 +1,14 @@
+name: Hello World Test
+description: "Minimal test addon to verify visibility"
+version: "1.0"
+slug: hello_world_test
+startup: application
+boot: auto
+init: false
+homeassistant_api: false
+
+options:
+  test_option: "hej"
+
+schema:
+  test_option: str
