@@ -1,0 +1,12 @@
+FROM python:3.11-alpine
+
+# Install bash helper, convert CRLF→LF, and Python deps
+RUN apk add --no-cache bash dos2unix && pip install gql paho-mqtt websockets
+
+WORKDIR /app
+COPY run.sh tibber.py ./
+
+RUN dos2unix run.sh && chmod +x run.sh
+
+CMD ["bash","run.sh"]
+
