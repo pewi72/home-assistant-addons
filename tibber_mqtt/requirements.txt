@@ -1,3 +1,0 @@
-pyTibber>=0.31.0
-aiohttp
-paho-mqtt
