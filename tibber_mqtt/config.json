@@ -1,0 +1,28 @@
+{
+  "name": "Tibber MQTT",
+  "version": "1.0.0",
+  "slug": "tibber_mqtt",
+  "description": "Publicerar Tibber live-data till MQTT",
+  "url": "https://github.com/pewi72/home-assistant-addons",
+  "startup": "application",
+  "boot": "auto",
+  "init": false,
+  "arch": ["amd64", "armv7", "aarch64"],
+  "options": {
+    "tibber_token": "",
+    "home_id": "",
+    "mqtt_host": "core-mosquitto",
+    "mqtt_port": 1883,
+    "mqtt_user": "mqttuser",
+    "mqtt_password": "password"
+  },
+  "schema": {
+    "tibber_token": "str",
+    "home_id": "str",
+    "mqtt_host": "str",
+    "mqtt_port": "int",
+    "mqtt_user": "str",
+    "mqtt_password": "password"
+  },
+  "services": ["mqtt:need"]
+}

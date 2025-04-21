@@ -1,0 +1,5 @@
+build_from:
+  amd64: "python:3.11-alpine"
+  armv7: "python:3.11-alpine"
+  aarch64: "python:3.11-alpine"
+squash: false

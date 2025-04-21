@@ -1,0 +1,19 @@
+FROM python:3.11-alpine
+
+# Install required packages
+RUN apk add --no-cache bash curl jq dos2unix
+
+# Install Python dependencies
+RUN pip install gql paho-mqtt websockets aiohttp
+
+WORKDIR /app
+
+# Copy files
+COPY run.sh /app/
+COPY tibber.py /app/
+
+# Fix line endings and make run.sh executable
+RUN dos2unix /app/run.sh && chmod +x /app/run.sh
+
+# Command to start the add-on
+ENTRYPOINT ["/app/run.sh"]
