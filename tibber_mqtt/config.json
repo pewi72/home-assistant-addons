@@ -1,0 +1,39 @@
+{
+  "name": "Tibber MQTT",
+  "version": "1.0.8",
+  "slug": "tibber_mqtt",
+  "description": "Publicerar Tibber live-data till MQTT via explicit miljövariabelmappning",
+  "startup": "application",
+  "boot": "auto",
+  "init": false,
+  "hassio_api": false,
+  "homeassistant_api": false,
+  "hassio_role": "default",
+  "image": "pewi72/{arch}-tibber-mqtt",
+  "url": "https://github.com/pewi72/home-assistant-addons/tree/main/tibber_mqtt",
+  "environment": {
+    "TIBBER_TOKEN": "{{ options.tibber_token }}",
+    "HOME_ID": "{{ options.home_id }}",
+    "MQTT_HOST": "{{ options.mqtt_host }}",
+    "MQTT_PORT": "{{ options.mqtt_port }}",
+    "MQTT_USER": "{{ options.mqtt_user }}",
+    "MQTT_PASSWORD": "{{ options.mqtt_password }}"
+  },
+  "arch": ["amd64", "armv7", "aarch64"],
+  "options": {
+    "tibber_token": "",
+    "home_id": "",
+    "mqtt_host": "core-mosquitto",
+    "mqtt_port": 1883,
+    "mqtt_user": "mqttuser",
+    "mqtt_password": "Paw90901%"
+  },
+  "schema": {
+    "tibber_token": "str",
+    "home_id": "str",
+    "mqtt_host": "str",
+    "mqtt_port": "int",
+    "mqtt_user": "str",
+    "mqtt_password": "str"
+  }
+}
